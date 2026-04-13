@@ -1,0 +1,50 @@
+name: ✨ Feature Request
+description: Suggest a new feature or improvement for Vurro.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing your idea! Please fill out the details below.
+        Before submitting, please [search existing issues](../../issues) to see if this has already been requested.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the problem or limitation you're running into. Focus on the *why*, not just the *what*.
+      placeholder: I'm frustrated when…
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the feature you'd like
+      description: A clear description of what you'd like to see added or changed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Have you found any workarounds or alternative approaches?
+    validations:
+      required: false
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or references
+      description: Links, screenshots, or descriptions of similar features in other tools that illustrate the idea.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else you'd like to add.
+    validations:
+      required: false
