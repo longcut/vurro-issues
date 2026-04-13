@@ -1,0 +1,93 @@
+name: 🐛 Bug Report
+description: Report something that isn't working as expected.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report a bug! Please fill out the details below so we can investigate.
+        Before submitting, please [search existing issues](../../issues) to avoid duplicates.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear and concise description of the bug.
+      placeholder: Describe the problem…
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Go to '…'
+        2. Click on '…'
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Edge
+        - Brave
+        - Firefox
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: browser_version
+    attributes:
+      label: Browser version
+      placeholder: e.g., 124.0.6367.82
+    validations:
+      required: false
+
+  - type: input
+    id: extension_version
+    attributes:
+      label: Vurro extension version
+      description: Found in your browser's extensions/add-ons page.
+      placeholder: e.g., 1.2.0
+    validations:
+      required: false
+
+  - type: input
+    id: substack
+    attributes:
+      label: Substack URL (if applicable)
+      description: Does this happen on a specific Substack or all of them?
+      placeholder: e.g., https://example.substack.com
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or recordings
+      description: Drag and drop screenshots or screen recordings here if they help illustrate the problem.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Any other information that might be relevant.
+    validations:
+      required: false

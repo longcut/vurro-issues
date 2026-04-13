@@ -1,0 +1,40 @@
+name: ❓ Question
+description: Ask a question about using the Vurro extension.
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question? We're happy to help!
+        Before asking, please [search existing issues](../../issues) — your question may already have been answered.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: What would you like to know?
+      placeholder: How do I…?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser (if relevant)
+      options:
+        - Chrome
+        - Edge
+        - Brave
+        - Firefox
+        - Other
+        - Not applicable
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Any other details that might help us answer your question.
+    validations:
+      required: false
