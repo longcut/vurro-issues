@@ -1,5 +1,5 @@
 name: ❓ Question
-description: Ask a question about using the Vurro extension.
+description: Ask a question about using Vurro on the browser, Android, or iOS.
 labels: ["question"]
 body:
   - type: markdown
@@ -18,15 +18,13 @@ body:
       required: true
 
   - type: dropdown
-    id: browser
+    id: platform
     attributes:
-      label: Browser (if relevant)
+      label: Platform (if relevant)
       options:
-        - Chrome
-        - Edge
-        - Brave
-        - Firefox
-        - Other
+        - Browser extension
+        - Android app
+        - iOS app
         - Not applicable
     validations:
       required: false

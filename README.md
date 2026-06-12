@@ -1,17 +1,28 @@
 # Vurro – Issues & Feedback
 
-This repository is the public issue tracker for **[Vurro](https://vurro.net)**, a browser extension that enhances Substack Chat.
+This repository is the public issue tracker for **[Vurro](https://vurro.net)**, which enhances Substack Chat across the browser extension and the Android and iOS mobile apps.
 
-> The extension source code lives in a private repository. Use this repo to submit bug reports, feature requests, and questions.
+> The source code lives in a private repository. Use this repo to submit bug reports, feature requests, and questions for any platform.
 
 ---
 
-## Install the Extension
+## Install Vurro
+
+### Browser extension
 
 | Browser | Link |
 |---------|------|
 | Chrome / Edge / Brave | [Chrome Web Store](https://chromewebstore.google.com/detail/iiikcncocbihjgghlcmdbimdnkjbemdc) |
 | Firefox | [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/vurro-for-substack/) |
+
+### Android (beta)
+
+1. Join the testers Google Group: [groups.google.com/g/vurro-testers](https://groups.google.com/g/vurro-testers)
+2. Once you've joined, install from the Play Store: [Vurro on Google Play](https://play.google.com/store/apps/details?id=net.vurro.app)
+
+### iOS (beta via TestFlight)
+
+Vurro isn't on the public App Store yet, so you'll need Apple's **TestFlight** app first. This invite link grants access to Vurro for Substack and includes instructions for using TestFlight: [testflight.apple.com/join/vMHra1nr](https://testflight.apple.com/join/vMHra1nr)
 
 ---
 
@@ -33,7 +44,9 @@ This repository is the public issue tracker for **[Vurro](https://vurro.net)**, 
 
 ## Tips for a Good Bug Report
 
-- Include your **browser name and version** (e.g., Chrome 124, Firefox 126).
+- Tell us the **platform**: browser extension, Android, or iOS.
+- For the **extension**, include your browser name and version (e.g., Chrome 124, Firefox 126) and the Vurro extension version.
+- For the **mobile apps**, include your device, OS version, and Vurro app version (e.g., Pixel 8, Android 14, Vurro 1.2.0).
 - Describe the **steps to reproduce** the problem.
 - Describe what you **expected** to happen vs. what **actually** happened.
 - Attach **screenshots or screen recordings** if possible.

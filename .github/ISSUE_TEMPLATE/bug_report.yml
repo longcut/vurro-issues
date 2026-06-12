@@ -8,6 +8,18 @@ body:
         Thank you for taking the time to report a bug! Please fill out the details below so we can investigate.
         Before submitting, please [search existing issues](../../issues) to avoid duplicates.
 
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Where are you experiencing the issue?
+      options:
+        - Browser extension
+        - Android app
+        - iOS app
+    validations:
+      required: true
+
   - type: textarea
     id: description
     attributes:
@@ -37,23 +49,31 @@ body:
     validations:
       required: true
 
+  - type: markdown
+    attributes:
+      value: |
+        ### Environment
+        Please complete the fields that apply to your platform.
+
   - type: dropdown
     id: browser
     attributes:
-      label: Browser
+      label: Browser (extension only)
+      description: Which browser are you using? Leave as *Not applicable* for mobile apps.
       options:
+        - Not applicable
         - Chrome
         - Edge
         - Brave
         - Firefox
         - Other
     validations:
-      required: true
+      required: false
 
   - type: input
     id: browser_version
     attributes:
-      label: Browser version
+      label: Browser version (extension only)
       placeholder: e.g., 124.0.6367.82
     validations:
       required: false
@@ -61,8 +81,35 @@ body:
   - type: input
     id: extension_version
     attributes:
-      label: Vurro extension version
+      label: Vurro extension version (extension only)
       description: Found in your browser's extensions/add-ons page.
+      placeholder: e.g., 1.2.0
+    validations:
+      required: false
+
+  - type: input
+    id: device
+    attributes:
+      label: Device (mobile only)
+      description: The phone or tablet you're using.
+      placeholder: e.g., Pixel 8, iPhone 15 Pro, iPad Air
+    validations:
+      required: false
+
+  - type: input
+    id: os_version
+    attributes:
+      label: OS version (mobile only)
+      description: Your Android or iOS version.
+      placeholder: e.g., Android 14, iOS 17.4
+    validations:
+      required: false
+
+  - type: input
+    id: app_version
+    attributes:
+      label: Vurro app version (mobile only)
+      description: Found in the app's settings/about screen or your app store.
       placeholder: e.g., 1.2.0
     validations:
       required: false
