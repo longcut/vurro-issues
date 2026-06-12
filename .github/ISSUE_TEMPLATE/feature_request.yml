@@ -8,6 +8,19 @@ body:
         Thanks for sharing your idea! Please fill out the details below.
         Before submitting, please [search existing issues](../../issues) to see if this has already been requested.
 
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Which platform is this request for?
+      options:
+        - Browser extension
+        - Android app
+        - iOS app
+        - All platforms
+    validations:
+      required: true
+
   - type: textarea
     id: problem
     attributes:
