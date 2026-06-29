@@ -12,6 +12,6 @@ contact_links:
   - name: 🤖 Android (beta) – Join the testers group
     url: https://groups.google.com/g/vurro-testers
     about: Join the Google Group to get access to the Vurro Android app on the Play Store.
-  - name: 🍏 iOS (beta) – TestFlight invite
-    url: https://testflight.apple.com/join/vMHra1nr
-    about: Get the Vurro iOS app via Apple TestFlight (TestFlight app required).
+  - name: 🍏 iOS – App Store
+    url: https://apps.apple.com/app/apple-store/id6771997120?pt=128919784&ct=vurro-gh&mt=8
+    about: Install or review Vurro on the Apple App Store.
