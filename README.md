@@ -20,9 +20,9 @@ This repository is the public issue tracker for **[Vurro](https://vurro.net)**, 
 1. Join the testers Google Group: [groups.google.com/g/vurro-testers](https://groups.google.com/g/vurro-testers)
 2. Once you've joined, install from the Play Store: [Vurro on Google Play](https://play.google.com/store/apps/details?id=net.vurro.app)
 
-### iOS (beta via TestFlight)
+### iOS
 
-Vurro isn't on the public App Store yet, so you'll need Apple's **TestFlight** app first. This invite link grants access to Vurro for Substack and includes instructions for using TestFlight: [testflight.apple.com/join/vMHra1nr](https://testflight.apple.com/join/vMHra1nr)
+Vurro is available on the App Store: [Vurro on the App Store](https://apps.apple.com/app/apple-store/id6771997120?pt=128919784&ct=vurro-gh&mt=8)
 
 ---
 
