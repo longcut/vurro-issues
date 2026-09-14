@@ -2,16 +2,16 @@ blank_issues_enabled: false
 contact_links:
   - name: 🌐 Vurro Website
     url: https://vurro.net
-    about: Learn more about the Vurro extension.
+    about: Learn more about Vurro for browser, Android, and iOS.
   - name: 🛒 Chrome Web Store
     url: https://chromewebstore.google.com/detail/iiikcncocbihjgghlcmdbimdnkjbemdc
     about: Install or review Vurro on the Chrome Web Store.
   - name: 🦊 Firefox Add-ons
     url: https://addons.mozilla.org/en-US/firefox/addon/vurro-for-substack/
     about: Install or review Vurro on Firefox Add-ons.
-  - name: 🤖 Android (beta) – Join the testers group
-    url: https://groups.google.com/g/vurro-testers
-    about: Join the Google Group to get access to the Vurro Android app on the Play Store.
+  - name: 🤖 Android – Google Play
+    url: https://play.google.com/store/apps/details?id=net.vurro.app
+    about: Install or review Vurro on Google Play.
   - name: 🍏 iOS – App Store
     url: https://apps.apple.com/app/apple-store/id6771997120?pt=128919784&ct=vurro-gh&mt=8
     about: Install or review Vurro on the Apple App Store.

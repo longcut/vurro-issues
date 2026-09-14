@@ -15,10 +15,9 @@ This repository is the public issue tracker for **[Vurro](https://vurro.net)**, 
 | Chrome / Edge / Brave | [Chrome Web Store](https://chromewebstore.google.com/detail/iiikcncocbihjgghlcmdbimdnkjbemdc) |
 | Firefox | [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/vurro-for-substack/) |
 
-### Android (beta)
+### Android
 
-1. Join the testers Google Group: [groups.google.com/g/vurro-testers](https://groups.google.com/g/vurro-testers)
-2. Once you've joined, install from the Play Store: [Vurro on Google Play](https://play.google.com/store/apps/details?id=net.vurro.app)
+Vurro is available on Google Play: [Vurro on Google Play](https://play.google.com/store/apps/details?id=net.vurro.app)
 
 ### iOS
 
@@ -34,9 +33,10 @@ Vurro is available on the App Store: [Vurro on the App Store](https://apps.apple
 
 | Template | When to use |
 |----------|-------------|
-| 🐛 **Bug Report** | Something isn't working as expected |
+| 🐛 **Bug Report · Browser extension** | Something isn't working in the Chrome, Edge, Brave, or Firefox extension |
+| 🐛 **Bug Report · Mobile app** | Something isn't working in the Android or iOS app |
 | ✨ **Feature Request** | You'd like to see a new feature or improvement |
-| ❓ **Question** | You have a question about the extension |
+| ❓ **Question** | You have a question about Vurro |
 
 4. Fill in the template with as much detail as possible and submit.
 
@@ -44,9 +44,7 @@ Vurro is available on the App Store: [Vurro on the App Store](https://apps.apple
 
 ## Tips for a Good Bug Report
 
-- Tell us the **platform**: browser extension, Android, or iOS.
-- For the **extension**, include your browser name and version (e.g., Chrome 124, Firefox 126) and the Vurro extension version.
-- For the **mobile apps**, include your device, OS version, and Vurro app version (e.g., Pixel 8, Android 14, Vurro 1.2.0).
+- Pick the **bug template that matches your platform** — each one asks only for the details relevant to it.
 - Describe the **steps to reproduce** the problem.
 - Describe what you **expected** to happen vs. what **actually** happened.
 - Attach **screenshots or screen recordings** if possible.
@@ -70,4 +68,4 @@ Please [search existing issues](../../issues) to see if your bug or request has 
 
 ## Website
 
-Visit [vurro.net](https://vurro.net) for more information about the extension.
+Visit [vurro.net](https://vurro.net) for more information about Vurro.
