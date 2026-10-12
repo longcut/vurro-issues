@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vurro Support</title>
+<meta name="description" content="Current notices for the Vurro browser extension and mobile apps, and where to report a problem.">
+<!--
+  Published to support.vurro.net from ma314smith/vurro's announcements/site/
+  by the announcements deploy workflow (#696). Edit it there, not in
+  vurro-issues: the next deploy overwrites this copy.
+
+  It renders the same announcements.json the extension and apps read, so the
+  page and the clients can't drift apart. Everything from the feed goes in
+  through textContent, never innerHTML, and links must be https.
+-->
+<style>
+  :root {
+    --bg-1: #FBFCFC; --bg-2: #F1F4F4; --border: #D6DCDC;
+    --fg-1: #1F2526; --fg-2: #525B5D; --fg-3: #7F888A;
+    --accent: #1F8B89; --accent-subtle: rgba(31,139,137,0.10);
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-1: #0F1314; --bg-2: #181E20; --border: #323A3D;
+      --fg-1: #D6DBDC; --fg-2: #9BA3A5; --fg-3: #6E7679;
+      --accent: #5BC0BE; --accent-subtle: rgba(91,192,190,0.15);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg-1); color: var(--fg-1);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 680px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 18px; margin: 32px 0 12px; }
+  .sub { color: var(--fg-2); margin: 0 0 8px; }
+  a { color: var(--accent); }
+  .card {
+    background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px; margin: 0 0 12px;
+  }
+  .card.important { border-color: var(--accent); }
+  .meta { color: var(--fg-3); font-size: 13px; margin: 0 0 6px; }
+  .badge {
+    display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent);
+    background: var(--accent-subtle); border-radius: 999px; padding: 1px 8px; margin-right: 6px;
+  }
+  .card h3 { font-size: 17px; margin: 0 0 4px; }
+  .lead { font-weight: 600; margin: 0 0 4px; }
+  .body { color: var(--fg-2); margin: 0; }
+  .card ul { color: var(--fg-2); margin: 8px 0 0; padding-left: 20px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 10px; font-weight: 600; }
+  .empty { color: var(--fg-2); }
+  ul.links { padding-left: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Vurro Support</h1>
+  <p class="sub">Notices about the Vurro browser extension and the Android and iOS apps.</p>
+
+  <h2>Current notices</h2>
+  <div id="notices"><p class="empty">Loading…</p></div>
+
+  <h2>Report a problem or ask a question</h2>
+  <ul class="links">
+    <li><a href="https://github.com/longcut/vurro-issues#how-to-submit-an-issue">How to submit an issue</a></li>
+    <li><a href="https://github.com/longcut/vurro-issues/issues">Open issues</a></li>
+    <li><a href="https://vurro.net">vurro.net</a></li>
+  </ul>
+</main>
+<script>
+(function () {
+  var PLATFORM_NAMES = { extension: 'Browser extension', android: 'Android', ios: 'iOS' };
+  var root = document.getElementById('notices');
+
+  function el(tag, cls, text) {
+    var node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text) node.textContent = text;
+    return node;
+  }
+
+  function rangeText(range) {
+    if (range.minVersion && range.maxVersion) return range.minVersion + '–' + range.maxVersion;
+    if (range.minVersion) return range.minVersion + ' and later';
+    if (range.maxVersion) return 'up to ' + range.maxVersion;
+    return '';
+  }
+
+  function platformsText(platforms) {
+    return Object.keys(platforms || {})
+      .filter(function (p) { return PLATFORM_NAMES[p]; })
+      .map(function (p) {
+        var range = rangeText(platforms[p] || {});
+        return PLATFORM_NAMES[p] + (range ? ' ' + range : '');
+      })
+      .join(' · ');
+  }
+
+  // The clients' rules: live in its window, and not a development-only test entry.
+  function isCurrent(entry, now) {
+    if (entry.variants && entry.variants.indexOf('production') === -1) return false;
+    if (entry.startsAt && now < Date.parse(entry.startsAt)) return false;
+    if (entry.expiresAt && now >= Date.parse(entry.expiresAt)) return false;
+    return true;
+  }
+
+  function render(feed) {
+    var now = Date.now();
+    var entries = ((feed && feed.announcements) || []).filter(function (e) { return isCurrent(e, now); });
+    entries.sort(function (a, b) { return (b.level === 'important') - (a.level === 'important'); });
+    root.textContent = '';
+    if (entries.length === 0) {
+      root.appendChild(el('p', 'empty', 'No current notices. Everything is working as expected.'));
+      return;
+    }
+    entries.forEach(function (entry) {
+      var card = el('article', 'card' + (entry.level === 'important' ? ' important' : ''));
+      var meta = el('p', 'meta');
+      if (entry.level === 'important') meta.appendChild(el('span', 'badge', 'Important'));
+      meta.appendChild(document.createTextNode(platformsText(entry.platforms)));
+      card.appendChild(meta);
+      card.appendChild(el('h3', null, entry.title));
+      if (entry.lead) card.appendChild(el('p', 'lead', entry.lead));
+      card.appendChild(el('p', 'body', entry.body));
+      if (entry.bullets && entry.bullets.length) {
+        var list = el('ul');
+        entry.bullets.forEach(function (b) { list.appendChild(el('li', null, b)); });
+        card.appendChild(list);
+      }
+      var ctas = (entry.ctas || []).filter(function (c) { return /^https:\/\//.test(c.url); });
+      if (ctas.length) {
+        var row = el('div', 'ctas');
+        ctas.forEach(function (c) {
+          var a = el('a', null, c.label);
+          a.href = c.url;
+          a.rel = 'noopener';
+          row.appendChild(a);
+        });
+        card.appendChild(row);
+      }
+      root.appendChild(card);
+    });
+  }
+
+  fetch('announcements.json', { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(function () {
+      root.textContent = '';
+      root.appendChild(el('p', 'empty', 'Notices could not be loaded. Try again shortly, or check the links below.'));
+    });
+})();
+</script>
+</body>
+</html>
