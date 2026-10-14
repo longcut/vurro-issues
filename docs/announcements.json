@@ -1,4 +1,37 @@
 {
   "version": 1,
-  "announcements": []
+  "announcements": [
+    {
+      "id": "dev-test-2026-10-a",
+      "platforms": {
+        "extension": {},
+        "android": {},
+        "ios": {}
+      },
+      "level": "important",
+      "startsAt": "2026-10-14T00:00:00Z",
+      "expiresAt": "2026-10-28T00:00:00Z",
+      "variants": ["development"],
+      "push": true,
+      "title": "Test announcement — please ignore",
+      "lead": "This is a development test of Vurro's announcement feed.",
+      "body": "Only development builds show this. Nothing needs doing.",
+      "bullets": ["Test entry: dismiss it as normal"],
+      "ctas": [{ "label": "Vurro", "url": "https://vurro.net" }]
+    },
+    {
+      "id": "dev-test-2026-10-b",
+      "platforms": {
+        "extension": {},
+        "android": {},
+        "ios": {}
+      },
+      "level": "info",
+      "startsAt": "2026-10-14T00:00:00Z",
+      "expiresAt": "2026-10-28T00:00:00Z",
+      "variants": ["development"],
+      "title": "Test announcement — please ignore",
+      "body": "A development test of an info-level notice. Only development builds show this."
+    }
+  ]
 }
